@@ -1,66 +1,35 @@
 const packageData = {
   // Modal Data (Triggered by Service Cards)
   "Small Decks + Porches": {
-    calcPrice: 35, // Median for calculator
     displayPrice: "$30 - $40",
     time: "1 - 2 hours",
     includes: ["Pre-rinse of surrounding area", "Soft-wash chemical application", "Surface pressure wash", "Final rinse and inspection"]
   },
   "Standard Decks + Porches": {
-    calcPrice: 105, // Median for calculator
     displayPrice: "$90 - $120",
     time: "2 - 3 hours",
     includes: ["Pre-rinse of surrounding area", "Soft-wash chemical application", "Deep surface pressure wash", "Spot treatment for tough stains", "Final rinse"]
   },
   "Large Decks, Porches + Roofs": {
-    calcPrice: 65, // Median for calculator
     displayPrice: "$60 - $70",
     time: "3 - 5 hours",
     includes: ["Pre-rinse of surrounding area", "Low-pressure roof soft-wash", "Deck and porch pressure wash", "Final rinse and inspection"]
   },
   "Regular Windows": {
-    calcPrice: 6,
     displayPrice: "$6 per side",
     time: "10 - 15 mins per window",
     includes: ["Exterior glass washing", "Streak-free squeegee finish", "Window sill wipe down"]
   },
   "Larger Windows": {
-    calcPrice: 8,
     displayPrice: "$8 per side",
     time: "15 - 20 mins per window",
     includes: ["Oversized exterior glass washing", "Streak-free squeegee finish", "Window sill wipe down"]
   },
   "Bin Cleaning": {
-    calcPrice: 20,
     displayPrice: "$20 per bin",
     time: "15 mins per bin",
     includes: ["High-pressure interior wash", "Exterior wipe down", "Deodorizer and sanitizer treatment"]
-  },
-
-  // Quote Form Dropdown Data (Base starting prices)
-  "Window Cleaning": {
-    calcPrice: 0, 
-    displayPrice: "Varies by window count",
-    time: "Varies"
-  },
-  "Pressure Washing": {
-    calcPrice: 0, 
-    displayPrice: "Varies by property size",
-    time: "Varies"
-  },
-  "Full Exterior Package": {
-    calcPrice: 199, 
-    displayPrice: "Starting at $199",
-    time: "4 - 6 hours"
   }
-};
-
-// Base upcharges mapped to the property dropdown in index.html
-const propertyUpcharge = {
-  "Single Story Home": 0,
-  "Two Story Home": 40,
-  "Townhouse / Condo": 20,
-  "Commercial Property": 0 // Usually custom quoted
 };
 
 function toggleMenu() {
@@ -83,7 +52,6 @@ function openPackage(name) {
     list.appendChild(li);
   });
 
-  // Configure modal button to jump to the single quote section
   const modalBookButton = document.getElementById("modalBookButton");
   modalBookButton.href = "#quote";
   modalBookButton.textContent = "Get a Quote for This";
@@ -96,33 +64,74 @@ function closeModal() {
   document.getElementById("modal").classList.remove("active");
 }
 
-function updateQuote() {
-  // We use the ID 'vehicle' to map to the property dropdown from the HTML
-  const property = document.getElementById("vehicle").value;
-  const selectedPackage = document.getElementById("package").value;
-
-  let packagePrice = selectedPackage ? packageData[selectedPackage].calcPrice : 0;
-  let propertyPrice = property ? propertyUpcharge[property] : 0;
-
-  let addonTotal = 0;
-  document.querySelectorAll("#quote .addon input:checked").forEach(addon => {
-    addonTotal += Number(addon.dataset.price);
-  });
-
-  let total = packagePrice + propertyPrice + addonTotal;
-
-  document.getElementById("sumVehicle").textContent = property || "Not selected";
-  document.getElementById("sumPackage").textContent = selectedPackage || "Not selected";
-  document.getElementById("sumAddons").textContent = "$" + addonTotal;
+// Logic to show/hide dynamic fields based on service selected
+function toggleServiceFields() {
+  const service = document.getElementById("package").value;
   
-  // Show "Varies" if the total is 0 to avoid confusing the user on variable services
-  document.getElementById("sumTotal").textContent = total > 0 ? "$" + total : "Varies based on details";
+  // Hide all sections initially
+  document.getElementById("window-fields").style.display = "none";
+  document.getElementById("bin-fields").style.display = "none";
+  document.getElementById("pressure-fields").style.display = "none";
 
+  // Show the correct section
+  if (service === "Window Cleaning") {
+    document.getElementById("window-fields").style.display = "block";
+  } else if (service === "Bin Cleaning") {
+    document.getElementById("bin-fields").style.display = "block";
+  } else if (service === "Pressure Washing") {
+    document.getElementById("pressure-fields").style.display = "block";
+  }
+
+  // Reset inputs when swapping services
+  document.getElementById("regularWindows").value = 0;
+  document.getElementById("largeWindows").value = 0;
+  document.getElementById("binCount").value = 0;
+  document.querySelectorAll("#pressure-fields input[type='checkbox']").forEach(cb => cb.checked = false);
+
+  updateQuote();
+}
+
+function updateQuote() {
+  const service = document.getElementById("package").value;
+  let total = 0;
+  let detailsText = "";
+
+  if (service === "Window Cleaning") {
+    const regWindows = parseInt(document.getElementById("regularWindows").value) || 0;
+    const lrgWindows = parseInt(document.getElementById("largeWindows").value) || 0;
+    
+    total = (regWindows * 6) + (lrgWindows * 8);
+    
+    if (regWindows > 0) detailsText += `${regWindows} Regular Windows. `;
+    if (lrgWindows > 0) detailsText += `${lrgWindows} Large Windows. `;
+    
+  } else if (service === "Bin Cleaning") {
+    const bins = parseInt(document.getElementById("binCount").value) || 0;
+    
+    total = bins * 20;
+    if (bins > 0) detailsText += `${bins} Bins.`;
+    
+  } else if (service === "Pressure Washing") {
+    document.querySelectorAll("#pressure-fields input:checked").forEach(addon => {
+      total += Number(addon.dataset.price);
+      detailsText += addon.value + ", ";
+    });
+  }
+
+  // Fallback text if nothing is typed/checked yet
+  if (detailsText === "") detailsText = "None";
+
+  // Update Summary Box
+  document.getElementById("sumPackage").textContent = service || "Not selected";
+  document.getElementById("sumAddons").textContent = detailsText;
+  document.getElementById("sumTotal").textContent = total > 0 ? "$" + total : "$0";
+
+  // Update Hidden Inputs for Form Submission
   const hiddenTotal = document.getElementById("hiddenTotal");
-  const hiddenAddonTotal = document.getElementById("hiddenAddonTotal");
+  const hiddenDetails = document.getElementById("hiddenDetails");
 
-  if (hiddenTotal) hiddenTotal.value = total > 0 ? "$" + total : "Varies";
-  if (hiddenAddonTotal) hiddenAddonTotal.value = "$" + addonTotal;
+  if (hiddenTotal) hiddenTotal.value = total > 0 ? "$" + total : "$0";
+  if (hiddenDetails) hiddenDetails.value = detailsText;
 }
 
 // Review Form Logic
@@ -153,7 +162,6 @@ document.querySelectorAll(".before-after-slider").forEach(slider => {
   const range = slider.querySelector(".slider-range");
   const afterImg = slider.querySelector(".after-img");
 
-  // Skip sliders that don't have both elements
   if (!range || !afterImg) return;
 
   function updateSlider() {
