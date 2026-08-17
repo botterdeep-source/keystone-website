@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Keystone Exterior Cleaning | Stroudsburg PA</title>
+  <meta name="description" content="Professional window cleaning and pressure washing services in Stroudsburg, PA and surrounding areas." />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+
+<body>
+  <header>
+    <div class="container nav" id="nav">
+      <a href="#" class="logo">
+        KEYSTONE <span class="blue-text">EXTERIOR CLEANING</span>
+      </a>
+
+      <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#quote">Quotes</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="socials">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="24" height="24" fill="none" stroke="url(#socialGradientInstagram)" stroke-width="2" viewBox="0 0 24 24">
+            <defs>
+              <linearGradient id="socialGradientInstagram" x1="0" y1="0" x2="24" y2="24">
+                <stop offset="0%" stop-color="#0a192f"/>
+                <stop offset="100%" stop-color="#0066cc"/>
+              </linearGradient>
+            </defs>
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1"/>
+          </svg>
+        </a>
+
+        <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="url(#socialGradientTikTok)">
+            <defs>
+              <linearGradient id="socialGradientTikTok" x1="0" y1="0" x2="24" y2="24">
+                <stop offset="0%" stop-color="#0a192f"/>
+                <stop offset="100%" stop-color="#0066cc"/>
+              </linearGradient>
+            </defs>
+            <path d="M16 3c.5 2 2 3.5 4 4v3c-1.5 0-3-.5-4-1.5V15a5 5 0 1 1-5-5c.3 0 .7 0 1 .1v3a2 2 0 1 0 2 2V3h2z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="badge">WINDOW CLEANING & PRESSURE WASHING • STROUDSBURG, PA</div>
+
+        <h1>Professional <span class="blue-text">Exterior</span> Cleaning in Stroudsburg</h1>
+
+        <p>
+          Top-rated window cleaning and pressure washing services for Stroudsburg and surrounding areas.
+          We bring the shine back to your property.
+        </p>
+
+        <div class="buttons">
+          <a href="#quote" class="btn btn-primary">Get a Free Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-text">
+          <div class="eyebrow">About Us</div>
+          <h2>Stroudsburg’s Premier <span>Exterior <span class="blue-text">Cleaning</span></span></h2>
+
+          <p>
+            Keystone Exterior Cleaning is a professional power washing business serving Stroudsburg, PA and the surrounding communities. 
+            Our goal is simple: to revitalize your home's exterior with a focus on pristine results, transparent pricing, and reliable service.
+          </p>
+
+          <p>
+            We offer specialized pressure washing for decks, porches, roofs, and driveways. 
+            We also provide streak-free window cleaning and professional trash bin sanitization. Every job is done with care, clear pricing, and honest communication.
+          </p>
+        </div>
+
+        <div class="trust-grid">
+          <div class="mini-card">
+            <strong>Pressure Washing</strong>
+            <p>Deep cleaning for decks, porches, roofs, and driveways.</p>
+          </div>
+
+          <div class="mini-card">
+            <strong>Window Cleaning</strong>
+            <p>Crystal clear, streak-free window washing.</p>
+          </div>
+
+          <div class="mini-card">
+            <strong>Clear Pricing</strong>
+            <p>Get an estimated total before booking with no hidden fees.</p>
+          </div>
+
+          <div class="mini-card">
+            <strong>Local Business</strong>
+            <p>Proudly serving Stroudsburg and nearby areas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">What We Do</div>
+          <h2>Our <span>Services</span></h2>
+        </div>
+
+        <h3 class="service-group-title">Pressure Washing</h3>
+
+        <div class="services-grid">
+          <div class="service-card detailing-card">
+            <h3>Small Decks + Porches</h3>
+            <p>Quick and thorough wash for smaller outdoor living spaces.</p>
+            <button onclick="openPackage('Small Decks + Porches')">View Details</button>
+          </div>
+
+          <div class="service-card detailing-card">
+            <h3>Standard Decks + Porches</h3>
+            <p>Deep cleaning for standard-sized decks and patios.</p>
+            <button onclick="openPackage('Standard Decks + Porches')">View Details</button>
+          </div>
+
+          <div class="service-card detailing-card">
+            <h3>Large Decks, Porches + Roofs</h3>
+            <p>Comprehensive washing for large exterior surfaces and roofs.</p>
+            <button onclick="openPackage('Large Decks, Porches + Roofs')">View Details</button>
+          </div>
+
+          <div class="service-card detailing-card">
+            <h3>Driveway Cleaning</h3>
+            <p>Remove oil stains, dirt, and grime from your concrete or asphalt.</p>
+            <a href="#quote">Get Quote</a>
+          </div>
+        </div>
+
+        <h3 class="service-group-title blue-title" style="margin-top: 40px;">Window & Bin Cleaning</h3>
+
+        <div class="services-grid gardening-grid">
+          <div class="service-card gardening-card">
+            <h3>Regular Windows</h3>
+            <p>Streak-free cleaning for standard-sized home windows.</p>
+            <button onclick="openPackage('Regular Windows')">View Details</button>
+          </div>
+
+          <div class="service-card gardening-card">
+            <h3>Larger Windows</h3>
+            <p>Specialized cleaning for oversized or custom glass panes.</p>
+            <button onclick="openPackage('Larger Windows')">View Details</button>
+          </div>
+
+          <div class="service-card gardening-card">
+            <h3>Bin Cleaning</h3>
+            <p>Eliminate odors and bacteria with our trash bin sanitization.</p>
+            <button onclick="openPackage('Bin Cleaning')">View Details</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Our Process</div>
+          <h2>Simple From <span>Start to Finish</span></h2>
+        </div>
+
+        <div class="process-list">
+          <div class="process-step">
+            <div class="number">1</div>
+            <div>
+              <h3>Choose Service</h3>
+              <p>Pick the pressure washing or window cleaning service that fits your needs.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="number">2</div>
+            <div>
+              <h3>Get a Quote</h3>
+              <p>Get an estimated price based on your property size and requested services.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="number">3</div>
+            <div>
+              <h3>Book Date and Time</h3>
+              <p>Pick a day and time that works best for your schedule.</p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="number">4</div>
+            <div>
+              <h3>We Come to You</h3>
+              <p>We arrive fully equipped to bring the shine back to your home's exterior.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Gallery</div>
+          <h2>Before and <span>After</span></h2>
+        </div>
+
+        <h3 class="service-group-title">Pressure Washing Gallery</h3>
+
+        <div class="before-after-grid">
+          <div class="before-after-slider detailing-slider">
+            <img class="before-img" src="assets/images/washing-before-1.jpg" alt="Washing before photo 1">
+            <img class="after-img" src="assets/images/washing-after-1.jpg" alt="Washing after photo 1">
+            <input type="range" min="0" max="100" value="50" class="slider-range" aria-label="Before and after slider">
+            <div class="slider-label before-label">Before</div>
+            <div class="slider-label after-label">After</div>
+          </div>
+
+          <div class="before-after-slider detailing-slider">
+            <img class="before-img" src="assets/images/washing-before-2.jpg" alt="Washing before photo 2">
+            <img class="after-img" src="assets/images/washing-after-2.jpg" alt="Washing after photo 2">
+            <input type="range" min="0" max="100" value="50" class="slider-range" aria-label="Before and after slider">
+            <div class="slider-label before-label">Before</div>
+            <div class="slider-label after-label">After</div>
+          </div>
+
+          <div class="before-after-slider detailing-slider">
+            <img class="before-img" src="assets/images/washing-before-3.jpg" alt="Washing before photo 3">
+            <img class="after-img" src="assets/images/washing-after-3.jpg" alt="Washing after photo 3">
+            <input type="range" min="0" max="100" value="50" class="slider-range" aria-label="Before and after slider">
+            <div class="slider-label before-label">Before</div>
+            <div class="slider-label after-label">After</div>
+          </div>
+
+          <div class="before-after-slider detailing-slider">
+            <img class="before-img" src="assets/images/washing-before-4.jpg" alt="Washing before photo 4">
+            <img class="after-img" src="assets/images/washing-after-4.jpg" alt="Washing after photo 4">
+            <input type="range" min="0" max="100" value="50" class="slider-range" aria-label="Before and after slider">
+            <div class="slider-label before-label">Before</div>
+            <div class="slider-label after-label">After</div>
+          </div>
+        </div>
+
+        <h3 class="service-group-title blue-title gallery-second-title" style="margin-top: 40px;">Window Cleaning Gallery</h3>
+
+        <div class="before-after-grid">
+          <div class="before-after-slider gardening-slider">
+            <img class="before-img" src="assets/images/window-before-1.jpg" alt="Window before photo 1">
+            <img class="after-img" src="assets/images/window-after-1.jpg" alt="Window after photo 1">
+            <input type="range" min="0" max="100" value="50" class="slider-range" aria-label="Before and after slider">
+            <div class="slider-label before-label">Before</div>
+            <div class="slider-label after-label">After</div>
+          </div>
+
+          <div class="before-after-slider gardening-slider">
+            <img class="before-img" src="assets/images/window-before-2.jpg" alt="Window before photo 2">
+            <img class="after-img" src="assets/images/window-after-2.jpg" alt="Window after photo 2">
+            <input type="range" min="0" max="100" value="50" class="slider-range" aria-label="Before and after slider">
+            <div class="slider-label before-label">Before</div>
+            <div class="slider-label after-label">After</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Reviews</div>
+          <h2>What Customers <span>Say</span></h2>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>The crew did a great job power washing our deck and cleaning everything up. They arrived on time and were easy to deal with. I will be using them for future projects. Highly recommend.</p>
+            <strong>Chris S.</strong>
+          </div>
+
+          <div class="review-card">
+            <div class="stars blue-stars">★★★★★</div>
+            <p>I highly recommend these guys! They did an amazing job on our windows. Prompt, efficient, and reasonable pricing.</p>
+            <strong>Giselle K.</strong>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>A truly hard-working and highly professional exterior cleaning team which is not easy to find these days.</p>
+            <strong>Frank</strong>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>I highly recommend these guys! We were so impressed with their hard work and dedication to restoring our driveway.</p>
+            <strong>Jamie L.</strong>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>The team was hard working and went above and beyond to complete the job. They were diligent and our porch looks brand new. I highly recommend!</p>
+            <strong>Cindy M.</strong>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>Amazing job on my house siding. It looks like it was just built yesterday. I would highly recommend.</p>
+            <strong>Timothy W.</strong>
+          </div>
+        </div>
+
+        <div class="review-form">
+          <h3>Leave a Review</h3>
+
+          <form id="reviewForm">
+            <label>Name</label>
+            <input type="text" id="reviewName" name="Review Name" placeholder="Your name" required>
+
+            <label>Rating</label>
+            <select id="reviewRating" name="Review Rating" required>
+              <option value="★★★★★">5 Stars</option>
+              <option value="★★★★☆">4 Stars</option>
+              <option value="★★★☆☆">3 Stars</option>
+              <option value="★★☆☆☆">2 Stars</option>
+              <option value="★☆☆☆☆">1 Star</option>
+            </select>
+
+            <label>Review</label>
+            <textarea id="reviewText" name="Review Message" placeholder="Write your review..." required></textarea>
+
+            <button class="btn btn-primary" type="submit">Submit Review</button>
+            <p id="reviewMessage"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="quote">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Exterior Cleaning Quote</div>
+          <h2>Instant <span>Online Quote</span></h2>
+        </div>
+
+        <div class="quote-box">
+          <div class="quote-card">
+            <h3>Quote Summary</h3>
+            <p>Pick your property type, primary service, add-ons, date, and payment option.</p>
+
+            <div class="summary">
+              <div class="summary-row">
+                <span>Property</span>
+                <span id="sumVehicle">Not selected</span>
+              </div>
+
+              <div class="summary-row">
+                <span>Service</span>
+                <span id="sumPackage">Not selected</span>
+              </div>
+
+              <div class="summary-row">
+                <span>Add-ons</span>
+                <span id="sumAddons">$0</span>
+              </div>
+
+              <div class="summary-row">
+                <span>Total</span>
+                <span id="sumTotal">$0</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="quote-card">
+            <form action="https://formspree.io/f/mlgzbdlp" method="POST" oninput="updateQuote()" onsubmit="updateQuote()">
+              <label>Property Type</label>
+              <select id="vehicle" name="Property Type" required>
+                <option value="">Select property type</option>
+                <option value="Single Story Home">Single Story Home</option>
+                <option value="Two Story Home">Two Story Home</option>
+                <option value="Townhouse / Condo">Townhouse / Condo</option>
+                <option value="Commercial Property">Commercial Property</option>
+              </select>
+
+              <label>Primary Service</label>
+              <select id="package" name="Service Package" required>
+                <option value="">Select primary service</option>
+                <option value="Window Cleaning">Window Cleaning</option>
+                <option value="Pressure Washing">Pressure Washing</option>
+                <option value="Bin Cleaning">Bin Cleaning</option>
+                <option value="Full Exterior Package">Full Exterior Package</option>
+              </select>
+
+              <label>Service Add-Ons</label>
+
+              <div class="addon">
+                <input type="checkbox" name="Add Ons" value="Small Deck / Porch" data-price="35">
+                <span>Small Deck / Porch - $30-$40<br><small>Estimated median price.</small></span>
+              </div>
+
+              <div class="addon">
+                <input type="checkbox" name="Add Ons" value="Standard Deck / Porch" data-price="105">
+                <span>Standard Deck / Porch - $90-$120<br><small>Estimated median price.</small></span>
+              </div>
+
+              <div class="addon">
+                <input type="checkbox" name="Add Ons" value="Large Deck / Roof" data-price="65">
+                <span>Large Deck, Porch, or Roof - $60-$70<br><small>Estimated median price.</small></span>
+              </div>
+              
+              <div class="addon">
+                <input type="checkbox" name="Add Ons" value="Bin Cleaning" data-price="20">
+                <span>Bin Cleaning - $20<br><small>Per bin sanitized.</small></span>
+              </div>
+
+              <label>Date</label>
+              <input type="date" id="date" name="Preferred Date" required>
+
+              <label>Time</label>
+              <input type="time" id="time" name="Preferred Time" required>
+
+              <label>First Name</label>
+              <input type="text" id="firstName" name="First Name" placeholder="First name" required>
+
+              <label>Last Name</label>
+              <input type="text" id="lastName" name="Last Name" placeholder="Last name" required>
+
+              <label>Phone</label>
+              <input type="tel" id="phone" name="Phone" placeholder="Phone number" required>
+
+              <label>Email</label>
+              <input type="email" id="email" name="email" placeholder="Email address" required>
+
+              <label>Address</label>
+              <input type="text" id="address" name="Service Address" placeholder="Service address" required>
+
+              <label>Payment Method</label>
+              <select id="payment" name="Payment Method" required>
+                <option value="">Select payment method</option>
+                <option>PayPal</option>
+                <option>Venmo</option>
+                <option>Cash App</option>
+                <option>Credit or Debit Card</option>
+                <option>Cash</option>
+              </select>
+
+              <label>Extra Notes</label>
+              <textarea id="notes" name="Extra Notes" placeholder="Tell us about your property..."></textarea>
+
+              <input type="hidden" name="_subject" value="New Exterior Cleaning Booking Request">
+              <input type="hidden" id="hiddenTotal" name="Estimated Total">
+              <input type="hidden" id="hiddenDuration" name="Estimated Duration">
+              <input type="hidden" id="hiddenAddonTotal" name="Add-On Total">
+
+              <button class="btn btn-primary full-btn" type="submit">Request Booking</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-grid">
+
+        <div class="contact-info">
+          <div class="eyebrow">Contact</div>
+          <h2>Ready to Transform Your <span class="blue-text">Home's Exterior?</span></h2>
+          <p>Contact us for professional pressure washing and window cleaning in Stroudsburg, PA and nearby areas.</p>
+
+          <div class="contact-line">
+            <div class="contact-icon">
+              <svg width="24" height="24" fill="none" stroke="#0066cc" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.11 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L9 10.74a16 16 0 0 0 4.26 4.26l1.28-1.28a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+
+            <div>
+              <strong>Call / Text</strong>
+              <p><a href="tel:5702090138" style="color: inherit; text-decoration: none;">(570) 209-0138</a></p>
+            </div>
+          </div>
+
+          <div class="contact-line">
+            <div class="contact-icon">
+              <svg width="24" height="24" fill="none" stroke="#0066cc" stroke-width="2" viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="M3 7l9 6 9-6"/>
+              </svg>
+            </div>
+
+            <div>
+              <strong>Email</strong>
+              <p><a href="mailto:windowsbykeystone@gmail.com" style="color: inherit; text-decoration: none;">windowsbykeystone@gmail.com</a></p>
+            </div>
+          </div>
+
+          <div class="contact-line">
+            <div class="contact-icon blue-contact-icon">
+              <svg width="24" height="24" fill="none" stroke="#0066cc" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+
+            <div>
+              <strong>Service Area</strong>
+              <p>Stroudsburg, East Stroudsburg, Mount Pocono, Delaware Water Gap, and nearby towns.</p>
+            </div>
+          </div>
+
+          <div class="contact-line">
+            <div class="contact-icon blue-contact-icon">
+              <svg width="24" height="24" fill="none" stroke="#0066cc" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3 2"/>
+              </svg>
+            </div>
+
+            <div>
+              <strong>Working Hours</strong>
+              <p>
+                Monday - Friday: 8:00AM - 6:00PM<br>
+                Saturday: 9:00AM - 4:00PM
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-right">
+          <form class="quote-card" action="https://formspree.io/f/mlgzbdlp" method="POST">
+            <label>Name</label>
+            <input type="text" name="Contact Name" placeholder="Name" required>
+
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Email" required>
+
+            <label>Address</label>
+            <input type="text" name="Contact Address" placeholder="Address" required>
+
+            <label>Message</label>
+            <textarea name="Contact Message" placeholder="How can we help?" required></textarea>
+
+            <input type="hidden" name="_subject" value="New Keystone Exterior Cleaning Contact Message">
+
+            <button class="btn btn-primary" type="submit">Send Message</button>
+          </form>
+
+          <div class="map">
+            <iframe
+              src="https://www.google.com/maps?q=Stroudsburg,%20PA&output=embed"
+              width="100%"
+              height="260"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy">
+            </iframe>
+          </div>
+
+          <p class="service-area-text">
+            Proudly serving Stroudsburg, PA and the surrounding communities.
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Keystone Exterior Cleaning. All rights reserved.
+  </footer>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <button class="close" onclick="closeModal()">&times;</button>
+
+      <h2 id="modalTitle">Package</h2>
+      <p id="modalPrice"></p>
+      <p id="modalTime"></p>
+
+      <h3>Included:</h3>
+      <ul id="modalIncludes"></ul>
+
+      <a href="#quote" class="btn btn-primary" id="modalBookButton" onclick="closeModal()">Book This Package</a>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
