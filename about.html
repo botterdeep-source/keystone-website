@@ -1,0 +1,119 @@
+Here is the updated `about.html` file. I have swapped out the old detailing and gardening copy for your friend's exterior cleaning services, updated the location to Stroudsburg, PA, and adjusted the SVG social icon gradients to match the new navy and blue color palette.
+
+I also fixed a small typo from your original code where `<div About Us</div>` was missing its closing bracket.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>About | Keystone Exterior Cleaning</title>
+  <meta name="description" content="Learn about Keystone Exterior Cleaning, a local power washing and window cleaning business serving Stroudsburg, PA and nearby areas." />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+
+<body>
+  <header>
+    <div class="container nav" id="nav">
+      <a href="index.html" class="logo">
+        KEYSTONE <span class="blue-text">EXTERIOR CLEANING</span>
+      </a>
+
+      <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+
+      <nav class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#process">Process</a>
+        <a href="index.html#gallery">Gallery</a>
+        <a href="index.html#reviews">Reviews</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <div class="socials">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="24" height="24" fill="none" stroke="url(#socialGradientInstagram)" stroke-width="2" viewBox="0 0 24 24">
+            <defs>
+              <!-- Updated gradient to match the new Navy and Blue branding -->
+              <linearGradient id="socialGradientInstagram" x1="0" y1="0" x2="24" y2="24">
+                <stop offset="0%" stop-color="#0a192f"/>
+                <stop offset="100%" stop-color="#0066cc"/>
+              </linearGradient>
+            </defs>
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1"/>
+          </svg>
+        </a>
+
+        <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="url(#socialGradientTikTok)">
+            <defs>
+              <!-- Updated gradient to match the new Navy and Blue branding -->
+              <linearGradient id="socialGradientTikTok" x1="0" y1="0" x2="24" y2="24">
+                <stop offset="0%" stop-color="#0a192f"/>
+                <stop offset="100%" stop-color="#0066cc"/>
+              </linearGradient>
+            </defs>
+            <path d="M16 3c.5 2 2 3.5 4 4v3c-1.5 0-3-.5-4-1.5V15a5 5 0 1 1-5-5c.3 0 .7 0 1 .1v3a2 2 0 1 0 2 2V3h2z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <div>About Us</div>
+          <h2>Stroudsburg’s Premier <span>Exterior <span class="blue-text">Cleaning</span></span></h2>
+        </div>
+
+        <p style="color: var(--muted); max-width: 850px; margin: auto; text-align: center; font-size: 17px;">
+          Keystone Exterior Cleaning is a professional power washing business serving Stroudsburg, PA and the surrounding communities. We revitalize your home's exterior with a focus on pristine results, transparent pricing, and reliable service.
+        </p>
+
+        <p style="color: var(--muted); max-width: 850px; margin: 18px auto 0; text-align: center; font-size: 17px;">
+          Our pressure washing services cover everything from standard decks and porches to large roofs and driveways. We also provide streak-free window cleaning and professional trash bin sanitization to keep your property looking its absolute best.
+        </p>
+
+        <div class="trust-grid" style="margin-top: 35px;">
+          <div class="mini-card">
+            <strong>Pressure Washing</strong>
+            <p>Deep cleaning for decks, porches, roofs, and driveways of all sizes.</p>
+          </div>
+
+          <div class="mini-card">
+            <strong>Window & Bin Cleaning</strong>
+            <p>Streak-free window washing and complete trash bin sanitization.</p>
+          </div>
+
+          <div class="mini-card">
+            <strong>Local Service</strong>
+            <p>Proudly serving Stroudsburg, PA and neighboring areas.</p>
+          </div>
+
+          <div class="mini-card">
+            <strong>Transparent Pricing</strong>
+            <p>Clear, upfront rates and simple online quotes for all of our services.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Keystone Exterior Cleaning. All rights reserved.
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+```
