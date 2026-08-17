@@ -338,7 +338,7 @@
       </div>
     </section>
 
-    <section id="quote">
+<section id="quote">
       <div class="container">
         <div class="section-title">
           <div class="eyebrow">Exterior Cleaning Quote</div>
@@ -348,111 +348,116 @@
         <div class="quote-box">
           <div class="quote-card">
             <h3>Quote Summary</h3>
-            <p>Pick your property type, primary service, add-ons, date, and payment option.</p>
+            <p>Select a service to calculate your estimated total.</p>
 
             <div class="summary">
-              <div class="summary-row">
-                <span>Property</span>
-                <span id="sumVehicle">Not selected</span>
-              </div>
-
               <div class="summary-row">
                 <span>Service</span>
                 <span id="sumPackage">Not selected</span>
               </div>
 
               <div class="summary-row">
-                <span>Add-ons</span>
-                <span id="sumAddons">$0</span>
+                <span>Details</span>
+                <span id="sumAddons">None</span>
               </div>
 
               <div class="summary-row">
-                <span>Total</span>
+                <span>Estimated Total</span>
                 <span id="sumTotal">$0</span>
               </div>
             </div>
           </div>
 
           <div class="quote-card">
-            <form action="https://formspree.io/f/mlgzbdlp" method="POST" oninput="updateQuote()" onsubmit="updateQuote()">
-              <label>Property Type</label>
-              <select id="vehicle" name="Property Type" required>
-                <option value="">Select property type</option>
-                <option value="Single Story Home">Single Story Home</option>
-                <option value="Two Story Home">Two Story Home</option>
-                <option value="Townhouse / Condo">Townhouse / Condo</option>
-                <option value="Commercial Property">Commercial Property</option>
-              </select>
-
+            <form action="https://formspree.io/f/mlgzbdlp" method="POST">
+              
               <label>Primary Service</label>
-              <select id="package" name="Service Package" required>
+              <select id="package" name="Service Package" required onchange="toggleServiceFields()">
                 <option value="">Select primary service</option>
                 <option value="Window Cleaning">Window Cleaning</option>
                 <option value="Pressure Washing">Pressure Washing</option>
                 <option value="Bin Cleaning">Bin Cleaning</option>
-                <option value="Full Exterior Package">Full Exterior Package</option>
               </select>
 
-              <label>Service Add-Ons</label>
+              <!-- Dynamic Field: Window Cleaning -->
+              <div id="window-fields" style="display: none; margin-top: 20px;">
+                <label>Regular Windows ($6 per side)</label>
+                <input type="number" id="regularWindows" name="Regular Windows Count" min="0" value="0" oninput="updateQuote()">
 
-              <div class="addon">
-                <input type="checkbox" name="Add Ons" value="Small Deck / Porch" data-price="35">
-                <span>Small Deck / Porch - $30-$40<br><small>Estimated median price.</small></span>
+                <label>Larger Windows ($8 per side)</label>
+                <input type="number" id="largeWindows" name="Large Windows Count" min="0" value="0" oninput="updateQuote()">
               </div>
 
-              <div class="addon">
-                <input type="checkbox" name="Add Ons" value="Standard Deck / Porch" data-price="105">
-                <span>Standard Deck / Porch - $90-$120<br><small>Estimated median price.</small></span>
+              <!-- Dynamic Field: Bin Cleaning -->
+              <div id="bin-fields" style="display: none; margin-top: 20px;">
+                <label>Number of Bins ($20 per bin)</label>
+                <input type="number" id="binCount" name="Bin Count" min="0" value="0" oninput="updateQuote()">
               </div>
 
-              <div class="addon">
-                <input type="checkbox" name="Add Ons" value="Large Deck / Roof" data-price="65">
-                <span>Large Deck, Porch, or Roof - $60-$70<br><small>Estimated median price.</small></span>
+              <!-- Dynamic Field: Pressure Washing -->
+              <div id="pressure-fields" style="display: none; margin-top: 20px;">
+                <label>Select Areas to Pressure Wash</label>
+                
+                <div class="addon">
+                  <input type="checkbox" name="Pressure Washing Areas" value="Small Deck / Porch" data-price="35" onchange="updateQuote()">
+                  <span>Small Deck / Porch - $30-$40<br><small>Estimated median price.</small></span>
+                </div>
+
+                <div class="addon">
+                  <input type="checkbox" name="Pressure Washing Areas" value="Standard Deck / Porch" data-price="105" onchange="updateQuote()">
+                  <span>Standard Deck / Porch - $90-$120<br><small>Estimated median price.</small></span>
+                </div>
+
+                <div class="addon">
+                  <input type="checkbox" name="Pressure Washing Areas" value="Large Deck / Roof" data-price="65" onchange="updateQuote()">
+                  <span>Large Deck, Porch, or Roof - $60-$70<br><small>Estimated median price.</small></span>
+                </div>
+                
+                <div class="addon">
+                  <input type="checkbox" name="Pressure Washing Areas" value="Bin Cleaning" data-price="20" onchange="updateQuote()">
+                  <span>Bin Cleaning - $20<br><small>Per bin sanitized.</small></span>
+                </div>
               </div>
-              
-              <div class="addon">
-                <input type="checkbox" name="Add Ons" value="Bin Cleaning" data-price="20">
-                <span>Bin Cleaning - $20<br><small>Per bin sanitized.</small></span>
+
+              <div style="margin-top: 20px;">
+                <label>Date</label>
+                <input type="date" id="date" name="Preferred Date" required>
+
+                <label>Time</label>
+                <input type="time" id="time" name="Preferred Time" required>
+
+                <label>First Name</label>
+                <input type="text" id="firstName" name="First Name" placeholder="First name" required>
+
+                <label>Last Name</label>
+                <input type="text" id="lastName" name="Last Name" placeholder="Last name" required>
+
+                <label>Phone</label>
+                <input type="tel" id="phone" name="Phone" placeholder="Phone number" required>
+
+                <label>Email</label>
+                <input type="email" id="email" name="email" placeholder="Email address" required>
+
+                <label>Address</label>
+                <input type="text" id="address" name="Service Address" placeholder="Service address" required>
+
+                <label>Payment Method</label>
+                <select id="payment" name="Payment Method" required>
+                  <option value="">Select payment method</option>
+                  <option>PayPal</option>
+                  <option>Venmo</option>
+                  <option>Cash App</option>
+                  <option>Credit or Debit Card</option>
+                  <option>Cash</option>
+                </select>
+
+                <label>Extra Notes</label>
+                <textarea id="notes" name="Extra Notes" placeholder="Tell us about your property..."></textarea>
               </div>
-
-              <label>Date</label>
-              <input type="date" id="date" name="Preferred Date" required>
-
-              <label>Time</label>
-              <input type="time" id="time" name="Preferred Time" required>
-
-              <label>First Name</label>
-              <input type="text" id="firstName" name="First Name" placeholder="First name" required>
-
-              <label>Last Name</label>
-              <input type="text" id="lastName" name="Last Name" placeholder="Last name" required>
-
-              <label>Phone</label>
-              <input type="tel" id="phone" name="Phone" placeholder="Phone number" required>
-
-              <label>Email</label>
-              <input type="email" id="email" name="email" placeholder="Email address" required>
-
-              <label>Address</label>
-              <input type="text" id="address" name="Service Address" placeholder="Service address" required>
-
-              <label>Payment Method</label>
-              <select id="payment" name="Payment Method" required>
-                <option value="">Select payment method</option>
-                <option>PayPal</option>
-                <option>Venmo</option>
-                <option>Cash App</option>
-                <option>Credit or Debit Card</option>
-                <option>Cash</option>
-              </select>
-
-              <label>Extra Notes</label>
-              <textarea id="notes" name="Extra Notes" placeholder="Tell us about your property..."></textarea>
 
               <input type="hidden" name="_subject" value="New Exterior Cleaning Booking Request">
               <input type="hidden" id="hiddenTotal" name="Estimated Total">
-              <input type="hidden" id="hiddenDuration" name="Estimated Duration">
-              <input type="hidden" id="hiddenAddonTotal" name="Add-On Total">
+              <input type="hidden" id="hiddenDetails" name="Service Details">
 
               <button class="btn btn-primary full-btn" type="submit">Request Booking</button>
             </form>
