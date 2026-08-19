@@ -146,7 +146,7 @@ if (reviewForm) {
     formData.append("rating", document.getElementById("reviewRating").value);
     formData.append("review", document.getElementById("reviewText").value);
 
-    await fetch("https://script.google.com/macros/s/AKfycbzV_--eM3NaQjH77sCGpV7GgvdlYgbWpHHM9e8q3mODgQhOnza7E0KZQix2Vhv0Is1exA/exec", {
+    await fetch("https://script.google.com/macros/s/AKfycbxqot2ihi-lutG-edaWWeFuBCEougmbf6A_8qFecqFUgtMUzeURj7iwfoBM3lBndDlrOQ/exec", {
       method: "POST",
       mode: "no-cors",
       body: formData
